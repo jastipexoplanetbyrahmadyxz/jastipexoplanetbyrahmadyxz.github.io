@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>JASTIP EXO BY RAHMADYXZ</title>
+        <title>JASTIP BY RAHMADYXZ</title>
         <link rel="icon" type="image/gif" href="https://upload.wikimedia.org/wikipedia/commons/a/a2/Exo-logo-v-neck_design2.jpg">
 
         <!-- CSS FILES -->
@@ -544,6 +544,10 @@
       <img src="images/popup.jpg" alt="Promo Banner" class="promo-image">
     </div>
 
+    <audio id="bgMusic" loop>
+  <source src="audio/exo.mp3" type="audio/mpeg">
+</audio>
+
     <div class="promo-actions">
       <!-- FIX: hapus href & kasih ID -->
       <a href="#" id="yesBtn" class="promo-btn">
@@ -675,6 +679,7 @@
   const closePopup = document.getElementById("closePopup");
   const noThanksBtn = document.getElementById("noThanksBtn");
   const yesBtn = document.getElementById("yesBtn");
+  const bgMusic = document.getElementById("bgMusic");
 
   window.addEventListener("load", function () {
     setTimeout(function () {
@@ -682,22 +687,33 @@
     }, 500);
   });
 
+  function playMusic() {
+    if (!bgMusic) return;
+    bgMusic.volume = 0.7;
+    bgMusic.play().catch(function(err){
+      console.log("Audio gagal:", err);
+    });
+  }
+
   function hidePopup() {
     promoPopup.classList.remove("show");
   }
 
-  // semua tombol close
-  closePopup.addEventListener("click", hidePopup);
+  // ❌ NO THANKS (optional, ga play musik)
   noThanksBtn.addEventListener("click", hidePopup);
 
-  // FIX: YES jadi close doang
+  // ✅ YES → play musik + close
   yesBtn.addEventListener("click", function(e){
     e.preventDefault();
+    playMusic();
     hidePopup();
   });
 
-  // klik background
-  promoPopup.querySelector(".promo-overlay").addEventListener("click", hidePopup);
+  // ✅ X → play musik + close
+  closePopup.addEventListener("click", function () {
+    playMusic();
+    hidePopup();
+  });
 </script>
 
         <!-- JAVASCRIPT FILES -->
