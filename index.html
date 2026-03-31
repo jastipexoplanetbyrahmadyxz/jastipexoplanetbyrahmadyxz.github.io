@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>JASTIP BY RAHMADYXZ</title>
+        <title>JASTIP EXO BY RAHMADYXZ</title>
         <link rel="icon" type="image/gif" href="https://upload.wikimedia.org/wikipedia/commons/a/a2/Exo-logo-v-neck_design2.jpg">
 
         <!-- CSS FILES -->
@@ -516,7 +516,7 @@
 
             <p>Starting 10 April 2026<br>at 02.00 p.m</p>
 <div class="sale-video mt-4 text-center">
-    <a href="https://www.youtube.com/watch?v=SlDFC8ylytk&t=96s" target="_blank" class="video-thumb">
+    <a href="https://www.youtube.com/watch?v=SlDFC8ylytk&t" target="_blank" class="video-thumb">
 
         <img src="images/bg.png" 
              class="img-fluid video-img">
@@ -681,38 +681,100 @@
   const yesBtn = document.getElementById("yesBtn");
   const bgMusic = document.getElementById("bgMusic");
 
+  let musicStarted = false;
+  let fadeInterval = null;
+  const DEFAULT_VOLUME = 0.7;
+
   window.addEventListener("load", function () {
     setTimeout(function () {
       promoPopup.classList.add("show");
     }, 500);
   });
 
-  function playMusic() {
-    if (!bgMusic) return;
-    bgMusic.volume = 0.7;
-    bgMusic.play().catch(function(err){
-      console.log("Audio gagal:", err);
-    });
-  }
-
   function hidePopup() {
     promoPopup.classList.remove("show");
   }
 
-  // ❌ NO THANKS (optional, ga play musik)
-  noThanksBtn.addEventListener("click", hidePopup);
+  function clearFade() {
+    if (fadeInterval) {
+      clearInterval(fadeInterval);
+      fadeInterval = null;
+    }
+  }
 
-  // ✅ YES → play musik + close
-  yesBtn.addEventListener("click", function(e){
+  function fadeInAndPlay() {
+    if (!bgMusic) return;
+
+    clearFade();
+
+    bgMusic.volume = 0;
+    bgMusic.play().then(() => {
+      fadeInterval = setInterval(() => {
+        if (bgMusic.volume < DEFAULT_VOLUME - 0.05) {
+          bgMusic.volume = Math.min(bgMusic.volume + 0.05, DEFAULT_VOLUME);
+        } else {
+          bgMusic.volume = DEFAULT_VOLUME;
+          clearFade();
+        }
+      }, 80);
+    }).catch((err) => {
+      console.log("Audio gagal diputar:", err);
+    });
+  }
+
+  function fadeOutAndPause() {
+    if (!bgMusic || bgMusic.paused) return;
+
+    clearFade();
+
+    fadeInterval = setInterval(() => {
+      if (bgMusic.volume > 0.05) {
+        bgMusic.volume = Math.max(bgMusic.volume - 0.05, 0);
+      } else {
+        bgMusic.volume = 0;
+        bgMusic.pause();
+        clearFade();
+      }
+    }, 80);
+  }
+
+  function startMusicIfNeeded() {
+    if (!bgMusic) return;
+    musicStarted = true;
+    fadeInAndPlay();
+  }
+  // YES = play music + close
+  yesBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    playMusic();
+    startMusicIfNeeded();
+    hidePopup();
+  });
+  // X = play music + close
+  closePopup.addEventListener("click", function () {
+    startMusicIfNeeded();
     hidePopup();
   });
 
-  // ✅ X → play musik + close
-  closePopup.addEventListener("click", function () {
-    playMusic();
-    hidePopup();
+  // kalau user keluar tab/browser -> fade out + pause
+  document.addEventListener("visibilitychange", function () {
+    if (!musicStarted || !bgMusic) return;
+
+    if (document.hidden) {
+      fadeOutAndPause();
+    } else {
+      fadeInAndPlay();
+    }
+  });
+
+  // fallback tambahan buat beberapa browser/device
+  window.addEventListener("blur", function () {
+    if (!musicStarted || !bgMusic) return;
+    fadeOutAndPause();
+  });
+
+  window.addEventListener("focus", function () {
+    if (!musicStarted || !bgMusic) return;
+    fadeInAndPlay();
   });
 </script>
 
