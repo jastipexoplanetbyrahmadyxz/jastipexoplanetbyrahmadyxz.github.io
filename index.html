@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>JASTIP BY RAHMADYXZ</title>
+        <link rel="icon" type="image/gif" href="https://upload.wikimedia.org/wikipedia/commons/a/a2/Exo-logo-v-neck_design2.jpg">
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/slick.css"/>
+        <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+
+        <style>
+            section {
+                content-visibility: visible !important;
+                contain: none !important;
+                contain-intrinsic-size: auto !important;
+            }
+
+            .slick-slideshow {
+                height: auto !important;
+                min-height: 0 !important;
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+
+            .slick-custom,
+            .slick-custom img {
+                display: block;
+                width: 100%;
+            }
+
+            .event-detail {
+                background: #efefef;
+                padding-top: 2.5rem !important;
+                padding-bottom: 4rem !important;
+            }
+
+            .event-title {
+                font-size: clamp(18px, 2.5vw, 32px);
+                font-weight: 900;
+                color: #000;
+                margin-bottom: 2.5rem;
+                text-align: center;
+                white-space: nowrap;
+                line-height: 1.2;
+            }
+
+            .event-title span {
+                color: #ff5a12;
+            }
+
+            .event-copy p {
+                font-size: 16px;
+                line-height: 1.7;
+                color: #111;
+                font-weight: 400;
+                margin-bottom: 1.5rem;
+            }
+
+            .seatplan-wrap {
+                text-align: center;
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+
+            .seatplan-image {
+                width: 100%;
+                max-width: 1100px;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .ticket-note {
+                margin-top: 1.5rem;
+            }
+
+            .ticket-note p {
+                font-size: 14px;
+                line-height: 1.5;
+                color: #333;
+                margin-bottom: 0.25rem;
+            }
+
+            .sale-section {
+                margin-top: 3rem;
+            }
+
+            .sale-card {
+                text-align: center;
+            }
+
+            .sale-card h5 {
+                font-size: 18px;
+                font-weight: 700;
+                color: #000;
+                margin-bottom: 1rem;
+                min-height: 50px;
+            }
+
+            .sale-date-box {
+                background: #aeb3bb;
+                color: #fff;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 1.2;
+                padding: 14px 10px;
+                border-radius: 4px;
+                margin-bottom: 1rem;
+            }
+
+            .sale-card p {
+                font-size: 15px;
+                line-height: 1.5;
+                color: #111;
+                margin-bottom: 0;
+                font-weight: 400;
+            }
+
+            @media screen and (max-width: 991px) {
+                .slick-slideshow {
+                    height: auto !important;
+                    min-height: 0 !important;
+                }
+
+                .sale-card h5 {
+                    min-height: auto;
+                }
+            }
+
+            @media screen and (max-width: 575px) {
+                .event-detail {
+                    padding-top: 2rem !important;
+                    padding-bottom: 3rem !important;
+                }
+
+                .event-copy p {
+                    font-size: 14px;
+                }
+
+                .ticket-note p {
+                    font-size: 12px;
+                }
+
+                .sale-date-box {
+                    font-size: 16px;
+                }
+
+                .sale-card h5 {
+                    font-size: 16px;
+                }
+            }
+            .btn-date {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+
+    padding: 14px 10px;
+    border-radius: 4px;
+
+    background: #ff5a12; /* 🔥 langsung orange */
+    transition: 0.3s;
+}
+.btn-date:hover {
+    background: #ff5a12;
+    color: #fff;
+    transform: translateY(-2px);
+}
+            .terms-box {
+    margin-top: 3rem;
+}
+
+.terms-title {
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.terms-list {
+    padding-left: 1.2rem;
+}
+
+.terms-list li {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.terms-list ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.terms-list ul li {
+    list-style: disc;
+    margin-left: 1rem;
+}
+
+.warning {
+    color: red;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+.divider {
+    width: 800px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #ff5a12, transparent);
+    margin: 25px auto 35px auto;
+}
+.terms-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.terms-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.terms-content ul {
+    margin-bottom: 1.5rem;
+}
+
+.warning {
+    color: red;
+    font-weight: 700;
+}
+.terms-content {
+    color: #111 !important;
+}
+
+.terms-content p,
+.terms-content li {
+    color: #111 !important;
+}
+.btn-date {
+    display: inline-block;
+    font-weight: 700;
+    padding: 16px 20px;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* ✅ BUTTON ON (AKTIF) */
+.btn-date.on {
+    background: #ff5a12;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ❌ BUTTON OFF (DISABLED) */
+.btn-date.off {
+    background: #9aa0a6;
+    color: #eee;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.navbar-brand {
+    width: 100%;
+    text-align: center;
+}
+.sale-video {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.video-thumb {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 760px;
+}
+
+.video-img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+/* 🔴 PLAY BUTTON */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 0, 0, 0.9);
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ▶ segitiga play */
+.play-button::before {
+    content: "";
+    border-style: solid;
+    border-width: 12px 0 12px 20px;
+    border-color: transparent transparent transparent white;
+    margin-left: 5px;
+}
+.custom-footer {
+  text-align: center;
+  font-size: 13px;
+  color: #000000;
+  padding: 25px 10px 35px;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 40px;
+}
+.footer-link {
+  color: #122aff; /* warna brand lo */
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+        </style>
+    </head>
+    
+    <body>
+
+        <section class="preloader">
+            <div class="spinner">
+                <span class="sk-inner-circle"></span>
+            </div>
+        </section>
+    
+        <main>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index.html">
+                        <strong><span>JASTIP</span> EXO PLANET #6 EXHORIZON 2026 BY @RAHMADYXZ</strong>
+                    </a>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="slick-slideshow">   
+                <div class="slick-custom">
+                    <img src="images/slideshow/background.jpg" class="img-fluid" alt="">
+                </div>
+            </section>
+
+            <section class="event-detail">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-11 col-12">
+                            <h2 class="event-title">EXO PLANET #6 - <span>EXhOrizon</span> in JAKARTA</h2>
+
+<div class="terms-box">
+    <div class="divider"></div>
+
+    <h3 class="terms-title">Terms & Conditions</h3>
+
+    <div class="terms-content">
+
+        <p><strong>1.</strong> Pembelian tiket akan dilakukan menggunakan identitas masing-masing customer dengan fee jasa sesuai CAT yang dipilih dan fee per-tiket.</p>
+
+        <p><strong>2. FEE JASA WAR TIKET 🎟️</strong></p>
+
+        <p><strong>PREMIUM CATEGORY — Rp 500.000 PER-TIKET</strong></p>
+        <ul>
+            <li>CAT E</li>
+            <li>CAT X</li>
+            <li>CAT O</li>
+            <li>CAT L</li>
+            <li>CAT HORIZON BOX</li>
+            <li>CAT 1</li>
+        </ul>
+
+        <p><strong>REGULAR CATEGORY — Rp 250.000 PER-TIKET</strong></p>
+        <ul>
+            <li>CAT 2</li>
+            <li>CAT 3</li>
+            <li>CAT 4</li>
+            <li>CAT 5</li>
+            <li>CAT 6</li>
+        </ul>
+
+        <p><strong>3. SISTEM PEMBAYARAN FEE JASA:</strong></p>
+        <ul>
+            <li>Booking Slot Fee: Rp100.000 (dibayarkan di awal untuk mengamankan slot)</li>
+            <li>Batas pelunasan fee dibayarkan H-5 sebelum WAR TIKET DIMULAI (MAX H-3).</li>
+        </ul>
+
+        <p><strong>4. SISTEM PEMBAYARAN TIKET:</strong></p>
+        <ul>
+            <li>Pembayaran tiket dilakukan langsung oleh customer melalui Virtual Account (VA) resmi saat proses war berlangsung (SELF PAYMENT).</li>
+            <li>Kami akan mengirimkan Virtual Account (VA) jika kami mendapatkan tiketnya dan customer harus membayar dengan cepat dan tentunya RE-CHECK kembali.</li>
+        </ul>
+
+        <p class="warning"><strong>‼️ Customer wajib standby dan fast response saat war berlangsung. Keterlambatan pembayaran dapat menyebabkan tiket hangus.</strong></p>
+
+        <p><strong>⚠️ APABILA KAMI TIDAK MENDAPATKAN TIKET ⚠️</strong></p>
+        <p>
+            Apabila tiket dinyatakan SOLD OUT oleh promotor dan kami tidak berhasil mendapatkan tiket maka dikenakan:<br>
+            Charge sebesar 20% : (Rp 100.000) PER-SLOT<br>
+            Digunakan sebagai biaya operasional & effort tim selama proses war<br>
+            (multi device, sistem, dan koneksi).
+        </p>
+
+        <p><strong>⚠️ PENJELASAN REFUND ⚠️</strong></p>
+        <p>
+            Refund 80% untuk fee tiket sebesar (Rp 400.000) CAT : E, X, O, L, & CAT 1<br>
+            Refund 80% untuk fee tiket sebesar (Rp 150.000) CAT : 2, 3, 4, 5, 6<br>
+            Refund 80% diatas adalah uang yang akan kami kembalikan
+        </p>
+
+        <p><strong>📝NOTE📝</strong></p>
+        <p>
+            Charge fee digunakan sebagai biaya operasional tim<br>
+            (multi device, effort selama war, dan koneksi khusus untuk memaksimalkan peluang mendapatkan tiket).
+        </p>
+
+        <p><strong>⚠️ PEMBATALAN BOOKING SLOT ⚠️</strong></p>
+
+        <p><strong>Pembatalan setelah pembayaran Booking Slot:</strong><br>
+        Apabila customer telah melakukan pembayaran booking slot dan ingin membatalkan sebelum pelunasan fee, maka akan dikenakan biaya sebesar 50% dari booking slot (Rp50.000). Sisa dana akan direfund.</p>
+
+        <p><strong>Pembatalan setelah pelunasan fee:</strong><br>
+        Apabila customer telah melakukan pelunasan fee dan ingin membatalkan sebelum war dimulai (H-1), maka akan dikenakan biaya sebesar Rp100.000. Sisa fee akan direfund.</p>
+
+        <p><strong>Pembatalan kurang dari 12 jam sebelum war:</strong><br>
+        Akan dikenakan biaya sebesar 50% dari total fee jasa sesuai kategori tiket yang dipilih (per slot).</p>
+
+        <p><strong>Contoh penjelasan:</strong><br>
+        Premium Category (Rp 500.000 / tiket) → dikenakan Rp250.000 per slot<br>
+        Regular Category (Rp 250.000 / tiket) → dikenakan Rp125.000 per slot</p>
+
+        <p><strong>Catatan:</strong><br>
+        1 slot berlaku untuk maksimal 4 tiket dalam 1 transaksi (1 data leader + maksimal 3 anggota).<br>
+        Biaya pembatalan tetap dihitung per slot, bukan per tiket.</p>
+
+        <p>
+        Sebagai ilustrasi:<br>
+        Jika 1 slot berisi 4 tiket Premium, maka total biaya pembatalan tetap Rp250.000 saja<br>
+        (dapat dibagi antar anggota ± Rp50.000 per orang).
+        </p>
+
+        <p>
+        Biaya ini berlaku karena slot sudah diamankan dan tidak dapat dialihkan dalam waktu singkat.
+        </p>
+
+        <p><strong>Pembatalan saat proses war berlangsung:</strong><br>
+        Tidak menerima pembatalan dalam kondisi apapun.<br>
+        Seluruh fee yang telah dibayarkan tidak dapat direfund.</p>
+
+        <p><strong>⚠️ PROSES REFUND ⚠️</strong></p>
+        <p>
+        Tiket yang sudah berhasil dipurchase tidak dapat dibatalkan dan menjadi tanggung jawab penuh customer.<br>
+        Proses refund fee dilakukan setelah dinyatakan SOLD OUT oleh promotor.<br>
+        Jika kedua pihak sama-sama berhasil mendapatkan tiket dan customer tidak memberikan konfirmasi sebelumnya, maka fee tetap akan dikenakan fiull.
+        </p>
+
+        <p>
+        Setelah menerima konfirmasi slot melalui WhatsApp, customer diwajibkan untuk melakukan pembayaran booking slot sesuai dengan batas waktu yang telah ditentukan.
+        </p>
+
+        <p>
+        Apabila pembayaran tidak dilakukan dalam periode tersebut, slot akan secara otomatis dialihkan kepada pendaftar lain.
+        </p>
+
+        <p>
+        Harap dipahami bahwa proses war tiket bersifat sangat kompetitif dan tidak menjamin keberhasilan 100%. Namun demikian, kami akan mengoptimalkan peluang dengan sistem multi device serta strategi terbaik yang kami miliki.
+        </p>
+
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+                            <div class="seatplan-wrap">
+                                <img src="images/seatplan.png" class="img-fluid seatplan-image" alt="Seat Plan">
+
+<div class="row justify-content-center text-center sale-section">
+
+    <div class="col-lg-4 col-12">
+        <div class="sale-card">
+
+            <h5>GENERAL SALE</h5>
+            <h5>SECURE YOUR SLOT NOW BEFORE IT’S GONE!</h5>
+            <a href="https://bit.ly/4s6BkWG" class="sale-date-box btn-date on">
+                BOOKING SLOT NOW!
+            </a>
+
+            <p>Starting 10 April 2026<br>at 02.00 p.m</p>
+<div class="sale-video mt-4 text-center">
+    <a href="https://www.youtube.com/watch?v=SlDFC8ylytk&t=96s" target="_blank" class="video-thumb">
+
+        <img src="images/bg.png" 
+             class="img-fluid video-img">
+
+        <div class="play-button"></div>
+    </a>
+            <h5>LIHAT PENJELASAN DI YOUTUBE</h5>
+</div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+<!-- POPUP -->
+<div id="promoPopup" class="promo-popup">
+  <div class="promo-overlay"></div>
+
+  <div class="promo-modal">
+    <button class="promo-close" id="closePopup" aria-label="Close popup">&times;</button>
+
+    <div class="promo-image-wrap">
+      <img src="images/popup.jpg" alt="Promo Banner" class="promo-image">
+    </div>
+
+    <div class="promo-actions">
+      <!-- FIX: hapus href & kasih ID -->
+      <a href="#" id="yesBtn" class="promo-btn">
+        YA, SAYA MENGERTI!
+      </a>
+
+      <button class="promo-link" id="noThanksBtn"></button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .promo-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .promo-popup.show {
+    display: flex;
+  }
+
+  .promo-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+  }
+
+  .promo-modal {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    z-index: 1;
+    animation: popupFadeUp 0.25s ease;
+  }
+
+  .promo-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .promo-image-wrap {
+    background: #111;
+  }
+
+  .promo-image {
+    width: 100%;
+    display: block;
+  }
+
+  .promo-actions {
+    padding: 22px 20px 26px;
+    text-align: center;
+  }
+
+  .promo-btn {
+    display: block;
+    width: 100%;
+    background: #ff2b2b;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 16px 20px;
+    border-radius: 999px;
+    transition: 0.2s ease;
+  }
+
+  .promo-btn:hover {
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  .promo-link {
+    margin-top: 14px;
+    border: none;
+    background: transparent;
+    color: #888;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @keyframes popupFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (max-width: 575px) {
+    .promo-modal {
+      max-width: 95%;
+      border-radius: 16px;
+    }
+
+    .promo-btn {
+      font-size: 15px;
+      padding: 14px 18px;
+    }
+  }
+</style>
+
+<script>
+  const promoPopup = document.getElementById("promoPopup");
+  const closePopup = document.getElementById("closePopup");
+  const noThanksBtn = document.getElementById("noThanksBtn");
+  const yesBtn = document.getElementById("yesBtn");
+
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      promoPopup.classList.add("show");
+    }, 500);
+  });
+
+  function hidePopup() {
+    promoPopup.classList.remove("show");
+  }
+
+  // semua tombol close
+  closePopup.addEventListener("click", hidePopup);
+  noThanksBtn.addEventListener("click", hidePopup);
+
+  // FIX: YES jadi close doang
+  yesBtn.addEventListener("click", function(e){
+    e.preventDefault();
+    hidePopup();
+  });
+
+  // klik background
+  promoPopup.querySelector(".promo-overlay").addEventListener("click", hidePopup);
+</script>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/Headroom.js"></script>
+        <script src="js/jQuery.headroom.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/custom.js"></script>
+
+<div class="custom-footer">
+  COPYRIGHT © 2022–<span id="year"></span> 
+  <a href="https://instagram.com/rahmadyxz" target="_blank" class="footer-link">
+    RAHMADYXZ X SPHYNIXSTORE
+  </a>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </body>
+</html>
