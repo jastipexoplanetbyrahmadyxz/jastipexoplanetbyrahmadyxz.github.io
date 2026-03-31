@@ -353,13 +353,11 @@
 
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
 
                     <a class="navbar-brand" href="index.html">
-                        <strong><span>JASTIP</span> EXO PLANET #6 EXHORIZON 2026 BY @RAHMADYXZ</strong>
-                    </a>
+    <strong><span>JASTIP</span> EXO PLANET #6</strong>
+    <strong>EXHORIZON 2026 BY @RAHMADYXZ</strong>
+</a>
                     </div>
                 </div>
             </nav>
@@ -560,118 +558,157 @@
 </div>
 
 <style>
-  .promo-popup {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-  }
+.promo-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
 
-  .promo-popup.show {
-    display: flex;
-  }
+.promo-popup.show {
+  display: flex;
+}
 
-  .promo-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
-  }
+.promo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
 
+.promo-modal {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  z-index: 1;
+  animation: popupFadeUp 0.25s ease;
+}
+
+.promo-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.promo-image-wrap {
+  background: #111;
+}
+
+.promo-image {
+  width: 100%;
+  display: block;
+}
+
+.promo-actions {
+  padding: 22px 20px 26px;
+  text-align: center;
+}
+
+.promo-btn {
+  display: block;
+  width: 100%;
+  background: #ff2b2b;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 16px 20px;
+  border-radius: 999px;
+  transition: 0.2s ease;
+}
+
+.promo-btn:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.promo-link {
+  margin-top: 14px;
+  border: none;
+  background: transparent;
+  color: #888;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@keyframes popupFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* NAVBAR BRAND FINAL */
+.navbar-brand {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.navbar-brand span {
+  color: #ff5a12;
+}
+
+@media (max-width: 575px) {
   .promo-modal {
-    position: relative;
+    max-width: 95%;
     width: 100%;
-    max-width: 520px;
-    background: #ffffff;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    z-index: 1;
-    animation: popupFadeUp 0.25s ease;
-  }
-
-  .promo-close {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: rgba(0, 0, 0, 0.55);
-    color: #fff;
-    border-radius: 50%;
-    font-size: 28px;
-    line-height: 1;
-    cursor: pointer;
-    z-index: 2;
-  }
-
-  .promo-image-wrap {
-    background: #111;
-  }
-
-  .promo-image {
-    width: 100%;
-    display: block;
-  }
-
-  .promo-actions {
-    padding: 22px 20px 26px;
-    text-align: center;
+    max-height: 90vh;
+    border-radius: 16px;
+    overflow-y: auto;
   }
 
   .promo-btn {
-    display: block;
-    width: 100%;
-    background: #ff2b2b;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 16px;
-    padding: 16px 20px;
-    border-radius: 999px;
-    transition: 0.2s ease;
+    font-size: 15px;
+    padding: 14px 18px;
   }
 
-  .promo-btn:hover {
-    color: #fff;
-    transform: translateY(-1px);
+  .promo-close {
+    width: 34px;
+    height: 34px;
+    font-size: 22px;
   }
 
-  .promo-link {
-    margin-top: 14px;
-    border: none;
-    background: transparent;
-    color: #888;
-    font-weight: 600;
-    text-decoration: underline;
-    cursor: pointer;
+  .navbar-brand {
+    padding: 0 36px;
   }
 
-  @keyframes popupFadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(12px) scale(0.98);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+  .navbar-brand strong {
+    font-size: 12px;
   }
-
-  @media (max-width: 575px) {
-    .promo-modal {
-      max-width: 95%;
-      border-radius: 16px;
-    }
-
-    .promo-btn {
-      font-size: 15px;
-      padding: 14px 18px;
-    }
-  }
+}
 </style>
 
 <script>
